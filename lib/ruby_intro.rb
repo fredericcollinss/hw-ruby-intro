@@ -26,7 +26,7 @@ def sum_to_n? (arr, n)
   arr.each_with_index do |item, index|
     j = index + 1
     while j < arr.length
-      if  item + arr[j] == n
+      if item + arr[j] == n
         return true
       end
       j += 1
@@ -66,7 +66,7 @@ def is_valid_binary_string? (binary_string)
     return false
   end
 
-  binary_string.each_char { |c|
+  binary_string.each_char {|c|
     if c != '0' && c != '1'
       return false
     end
@@ -94,5 +94,17 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  attr_accessor :isbn, :price
+
+  def initialize(isbn, price)
+    if isbn.length == 0 || Float(price) <= 0
+      raise ArgumentError
+    end
+    @isbn = isbn
+    @price = Float(price)
+  end
+
+  def price_as_string
+    "$%.2f" % @price
+  end
 end
