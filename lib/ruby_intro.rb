@@ -38,15 +38,25 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, " + name
 end
 
-def starts_with_consonant? s
-  # YOUR CODE HERE
+def starts_with_consonant? (s)
+  if s.length == 0
+    return false
+  end
+
+  first_char = s[0].downcase
+  if %w("a".."z").include? first_char
+    if %w(u e o a i).include? first_char
+      return false
+    end
+    return true
+  end
 end
 
-def binary_multiple_of_4? s
-  # YOUR CODE HERE
+def binary_multiple_of_4? (binary_string)
+
 end
 
 # Part 3
